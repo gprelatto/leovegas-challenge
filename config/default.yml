@@ -1,3 +1,5 @@
 PORT: 3000
 LOG_LEVEL: debug
+SECRET_API_KEY: # must complete
 DB_DATABASE: ./leovegas.sqlite
+JWT_SECRET: gonzalo123
