@@ -8,7 +8,7 @@ import { AuthService } from '../auth/auth.service';
 import { UpdateUserActionDTO } from './user.dto';
 import { DataSourceMock, UPDATED_USER, USER_USER, USER_USER_DELETED } from '../mocks/user.mock';
 import { USER_LIST } from '../mocks/auth.mock';
-import { UserRole } from '@/entities/user.entity';
+import { UserRole } from '../../entities/user.entity';
 
 describe('User Tests', () => {
   let authService: AuthService;
