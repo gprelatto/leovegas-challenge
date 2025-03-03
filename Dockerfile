@@ -8,6 +8,7 @@ COPY nest-cli.json ./
 COPY ormconfig.ts ./
 COPY datasource.config.ts ./
 COPY typeorm.object.ts ./
+COPY leovegas.sqlite ./
 
 RUN npm ci; npm run build;
 

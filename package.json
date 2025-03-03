@@ -22,6 +22,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js -d datasource.config.ts",
     "generate": "npm run typeorm migration:generate",
+    "create": "npm run typeorm migration:create",
     "migrate": "npm run typeorm migration:run",
     "rollback": "npm run typeorm migration:revert"
   },

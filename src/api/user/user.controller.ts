@@ -113,4 +113,25 @@ export class UsersController {
       },
     };
   }
+
+  @ApiOperation({ summary: 'Change a user Role' })
+  @ApiParam({ type: 'string', name: 'id' })
+  @Patch(':id/role')
+  @ApiBearerAuth('access-token')
+  @Roles(UserRole.ADMIN)
+  async assignRole(@Param('id') id: string, @Body() body: {role: UserRole}) {
+    const updatedUser = await this.usersService.assingnRole(id, body.role);
+    return {
+      data: {
+        type: 'users',
+        id: updatedUser.id,
+        attributes: {
+          ...updatedUser,
+        },
+        links: {
+          self: `/v1/users/${updatedUser.id}`,
+        },
+      },
+    };
+  }  
 }

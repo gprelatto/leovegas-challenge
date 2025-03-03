@@ -1,4 +1,4 @@
-import { User } from '../../entities/user.entity';
+import { User, UserRole } from '../../entities/user.entity';
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { DataSource } from 'typeorm';
 import { UpdateUserActionDTO } from './user.dto';
@@ -50,5 +50,12 @@ export class UsersService {
     if (!user) throw new HttpException('User not found.', HttpStatus.NOT_FOUND);
     user.isActive = false;
     return this.userRepository.softRemove(user);
+  }
+
+  async assingnRole(id: string, role: UserRole): Promise<User | null> {
+    const user = await this.userRepository.findOne({ where: { id } });
+    if (!user) throw new HttpException('User not found.', HttpStatus.NOT_FOUND);
+    user.role = role;
+    return this.userRepository.save(user);
   }
 }
