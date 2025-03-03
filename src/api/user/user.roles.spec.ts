@@ -109,7 +109,10 @@ describe('UsersController - Role Access', () => {
   });
 
   it('should deny non-ADMIN to RUN /v1/users/:id/role', async () => {
-    const response = await request(app.getHttpServer()).patch('/v1/users/d153d367-1976-43f7-9add-40800c0d2871/role').set('Authorization', `Bearer ${userToken}`).send({ body: {role: UserRole.ADMIN} });
+    const response = await request(app.getHttpServer())
+      .patch('/v1/users/d153d367-1976-43f7-9add-40800c0d2871/role')
+      .set('Authorization', `Bearer ${userToken}`)
+      .send({ body: { role: UserRole.ADMIN } });
     expect(response.status).toBe(403);
   });
 });

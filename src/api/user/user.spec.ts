@@ -99,7 +99,7 @@ describe('User Tests', () => {
 
     it('should change an user role', async () => {
       const req = { user: { id: '39a24ad7-d822-40fd-a151-a70b360a2f09' } };
-      const result = await userController.assignRole('d153d367-1976-43f7-9add-40800c0d2871', {role: UserRole.ADMIN});
+      const result = await userController.assignRole('d153d367-1976-43f7-9add-40800c0d2871', { role: UserRole.ADMIN });
 
       expect(result).toEqual({
         data: {

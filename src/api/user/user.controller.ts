@@ -119,7 +119,7 @@ export class UsersController {
   @Patch(':id/role')
   @ApiBearerAuth('access-token')
   @Roles(UserRole.ADMIN)
-  async assignRole(@Param('id') id: string, @Body() body: {role: UserRole}) {
+  async assignRole(@Param('id') id: string, @Body() body: { role: UserRole }) {
     const updatedUser = await this.usersService.assingnRole(id, body.role);
     return {
       data: {
@@ -133,5 +133,5 @@ export class UsersController {
         },
       },
     };
-  }  
+  }
 }
