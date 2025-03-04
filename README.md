@@ -1,5 +1,7 @@
 # LeoVegas Challenge by Gonzalo Prelatto
 
+<img width="1481" alt="image" src="https://github.com/user-attachments/assets/45300c6f-cf0b-44df-9c5b-8b958f0038e8" />
+
 ## Technologies
 - TypeScript
 - Node.js + NestJS
