@@ -11,7 +11,19 @@ export class AuthController {
   @ApiOperation({ summary: 'Create a new account' })
   @Post('register')
   async register(@Body() body: CreateUserDTO) {
-    return this.authService.register(body);
+    const newUser = await this.authService.register(body);
+    return {
+      data: {
+        type: 'users',
+        id: newUser.id,
+        attributes: {
+          ...newUser,
+        },
+        links: {
+          self: `/v1/users/${newUser.id}`,
+        },
+      },
+    };
   }
 
   @ApiOperation({ summary: 'Login with your details' })
