@@ -16,7 +16,7 @@ The repository already includes a seed of data to test the different endpoints.
    ```sh
    npm install
    ```
-2. If setting up a new environment, run migrations:
+2. If setting up a new environment, run migrations (this step is not necessary since a pre-seeded database is already included):
    ```sh
    npm run migrate
    ```
@@ -31,6 +31,16 @@ The repository already includes a seed of data to test the different endpoints.
   - API Base URL: `http://localhost:3000`
   - API Documentation (Swagger): `http://localhost:3000/swagger`
   - Admin Credentials: `admin@leovegas.es / 123asd123`
+
+### Possible improvements
+- Use a cloud database for data persistence (MySQL, PostgreSQL, etc.).
+- Improve test coverage.
+- Implement an interceptor or serializer to improve data return logic (JSON:API formatting).
+- Create a new endpoint to change passwords.
+- Implement a password policy (currently, there are no policies in place).
+- Containerize the application using Docker to standardize the service.
+- Set up a CI/CD pipeline to automate deployments and database migrations.
+- Orchestrate the application using Kubernetes to ensure auto-scaling and high availability.
 
 ## GitHub Actions
 A CI pipeline is configured to execute build and test processes on GitHub, ensuring project stability.
