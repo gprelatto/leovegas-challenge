@@ -28,13 +28,15 @@ The repository already includes a seed of data to test the different endpoints.
    ```
 
 ### Configuration
-- The startup port can be configured in the environment files.
+- The startup port can be configured in the environment files. (inside config folder)
 - Default access:
   - API Base URL: `http://localhost:3000`
-  - API Documentation (Swagger): `http://localhost:3000/swagger`
+  - API Documentation (Swagger): `http://localhost:3000/swagger` -> I enabled auth there to test all endpoints, just need to login and paste the token.
   - Admin Credentials: `admin@leovegas.es / 123asd123`
 
 ### Possible improvements
+- Implement refresh tokens for JWT (so we avoid re-login and we can refresh on demand using tokens)
+- Create environment branches (dev, stage, prod) and start working with PRs -> would be good to use branch protenction
 - Use a cloud database for data persistence (MySQL, PostgreSQL, etc.).
 - Improve test coverage.
 - Implement an interceptor or serializer to improve data return logic (JSON:API formatting).
